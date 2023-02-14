@@ -22,33 +22,35 @@ const InputMovie = () => {
 
   return (
     <>
-      <h1>Input Movie</h1>
-      <div className="d-flex flex-column">
-        <input
-          className="from-control"
-          type="text"
-          placeholder="Movie title"
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          className="from-control"
-          type="text"
-          placeholder="Movie summary"
-          onChange={(e) => setSummary(e.target.value)}
-        />
-        <input
-          className="from-control"
-          type="text"
-          placeholder="Movie rating"
-          onChange={(e) => setRating(e.target.value)}
-        />
+      <div className="container text-center">
+        <h1>Input Movie</h1>
+        <div className="d-flex flex-column">
+          <input
+            className="from-control"
+            type="text"
+            placeholder="Movie title"
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <input
+            className="from-control"
+            type="text"
+            placeholder="Movie summary"
+            onChange={(e) => setSummary(e.target.value)}
+          />
+          <input
+            className="from-control"
+            type="text"
+            placeholder="Movie rating"
+            onChange={(e) => setRating(e.target.value)}
+          />
+        </div>
+        <button
+          className="btn btn-success"
+          onClick={(e) => handleButtonClicked(e)}
+        >
+          Add Movie
+        </button>
       </div>
-      <button
-        className="btn btn-success"
-        onClick={(e) => handleButtonClicked(e)}
-      >
-        Add Movie
-      </button>
     </>
   );
 };
