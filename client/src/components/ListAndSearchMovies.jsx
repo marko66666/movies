@@ -3,7 +3,7 @@ import EditMovie from "./EditMovie";
 
 const ListAndSearchMovies = () => {
   const [movies, setMovies] = useState([]);
-  const [term, setMovieSearchTerm] = useState("");
+  const [term, setTerm] = useState("");
 
   useEffect(() => {
     getMovies();
@@ -42,6 +42,13 @@ const ListAndSearchMovies = () => {
     setMovies(movieArray); // 1) movies array is updated 2) Updated movies array is rendered on screen on line: 41
   };
 
+  const setTermAndFetchMovies = (e) => {
+    setTerm(e.target.value);
+    if (e.target.value === "") {
+      getMovies();
+    }
+  };
+
   return (
     <>
       <div className="container text-center">
@@ -52,9 +59,9 @@ const ListAndSearchMovies = () => {
             placeholder="Enter movie ..."
             className="form-control"
             value={term}
-            onChange={(e) => setMovieSearchTerm(e.target.value)}
+            onChange={(e) => setTermAndFetchMovies(e)}
           ></input>
-          <button className="btn btn-success">Submit</button>
+          <button className="btn btn-success">Search</button>
         </form>
         <table className="table mt-5">
           <thead>
